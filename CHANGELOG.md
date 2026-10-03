@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.4.0
+
+- `project-state` keeps `PROJECT-STATE.md`, the file a session reads first and writes last. It names one source of truth per domain, which may be an MCP server, the files to update when that domain changes, and at most five sources to read per task.
+- `project-state` adopts an existing repo that has no foundation pack.
+- `one-chunk` hands the end of the session to `project-state` when `PROJECT-STATE.md` exists.
+- `diagnose` writes `docs/bugs/<slug>.md`. The validator checks for a red loop, three to five falsifiable hypotheses with one confirmed, a fix that re-runs the loop, the regression test file, no leftover `[DEBUG-` tags, and no stale known issue.
+- `review-diff` runs the pack validators and project checks before judgement, keeps Standards and Spec separate, scopes Spec to the current chunk, and writes a `ship` or `fix` verdict the validator ties to the findings.
+- `ship-gate` writes `docs/releases/<version>.md`. Every PRD requirement is shipped with a path that exists or listed as not shipped, `later` and Do-not-build work cannot ship, and env lists names only.
+- Every skill description lists one trigger per distinct case, and `## Do not` lists became at most two `## Guardrails`.
+
 ## 1.3.0
 
 - Skills live in `skills/engineering/`, with a docs page per skill under `docs/engineering/`.

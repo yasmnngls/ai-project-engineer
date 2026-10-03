@@ -2,7 +2,7 @@
 
 ## Status
 
-Skill marketplace at 1.3.0, published at https://github.com/yasmnngls/ai-project-engineer. This repository distributes Cursor and Claude skills. It is not the product those skills build.
+Skill marketplace at 1.4.0, published at https://github.com/yasmnngls/ai-project-engineer. This repository distributes Cursor and Claude skills. It is not the product those skills build.
 
 ## Read this first
 
@@ -16,6 +16,10 @@ Run the skills in this order once a product repo exists:
 6. On a `wire` beat, connect the shell to the contracts and add one test of what the user sees.
 
 `assumption-trial`, `say-no`, and `spec-drift` read the pack. They do not replace steps 3 to 6.
+
+`project-state` opens and closes each session through `PROJECT-STATE.md`. In an existing repo without a pack, it runs first and points each domain at what already exists.
+
+`review-diff` writes `docs/reviews/` after a beat or a branch. `diagnose` writes `docs/bugs/` for one bug. `ship-gate` writes `docs/releases/` before a release.
 
 ## Containers
 
@@ -49,6 +53,10 @@ This repo has no interface. Product views take props and do not fetch, parse, or
 | Layout | `skills/<bucket>/<name>/SKILL.md` | Same shape as a public skills repo, so `npx skills add` and a Claude plugin can both install it. |
 | Hosts | One skill folder for Cursor and Claude | The procedure is the same. Manifests differ. |
 | Memory | `ARCHITECTURE.md` in the product repo | Agents reread a short file instead of reconstructing the system from chat. |
+| Session state | `PROJECT-STATE.md` with one source of truth per domain | A session trusts the winning source, not the first file it finds. MCP servers can own a domain without being copied into docs. |
+| Review | Checks before judgement, Standards and Spec kept apart | A failing typecheck is a fact and a smell is an opinion. Merging the axes lets one hide the other. |
+| Bugs | A red loop before any hypothesis | A theory without a loop that fails on the symptom cannot be confirmed or ruled out. |
+| Doc templates | None. One state file points at existing sources | A blank `DATABASE.md` or `SECURITY.md` competes with the code and goes stale. A missing domain is written as `missing`. |
 | Boundaries | Zod schemas before UI | Invalid payloads and impossible UI states fail before a component exists. |
 | Chunks | One beat per turn: contract, shell, or wire | A session that builds a whole feature rewrites its own constraints. |
 | Examples | Fixtures, never templates | Copying Site Log into an unrelated product is a failed skill run. |
@@ -56,4 +64,4 @@ This repo has no interface. Product views take props and do not fetch, parse, or
 
 ## Last change
 
-2026-10-03 Moved skills to `skills/engineering/` and made the repo root the Claude and Cursor plugin, so the pack installs like a public skills repository.
+2026-10-04 Added `project-state`, `diagnose`, `review-diff`, and `ship-gate`, each with a validator and a fixture under `examples/`.

@@ -1,6 +1,6 @@
 # AI Project Engineer
 
-Skills for the start of a product, and for the beats after it. `project-foundation` writes the pack an engineer builds from: a brief, PRD, personas, user journeys, sitemap, system design, data model and API, MVP slice, and risks. The later skills keep that pack coherent: a living architecture file, Zod contracts before UI, one presentational screen, one verifiable chunk, kill tests, refusal lines, and a spec-drift check.
+Skills for the start of a product, and for the beats after it. `project-foundation` writes the pack an engineer builds from: a brief, PRD, personas, user journeys, sitemap, system design, data model and API, MVP slice, and risks. The later skills keep that pack coherent: a living architecture file, Zod contracts before UI, one presentational screen, one verifiable chunk, kill tests, refusal lines, a spec-drift check, and a project-state file each session reads first and writes last.
 
 They are small and composable. Hack on them. The files in your project are yours.
 
@@ -93,6 +93,10 @@ These skills live in `skills/engineering/`. Each one is model-invoked: you can t
 - **[assumption-trial](./skills/engineering/assumption-trial/SKILL.md)**: Writes a kill test for each load-bearing assumption.
 - **[say-no](./skills/engineering/say-no/SKILL.md)**: Writes the refusal for each excluded capability.
 - **[spec-drift](./skills/engineering/spec-drift/SKILL.md)**: Compares the code to the pack and reports contradictions, gaps, and hardened assumptions.
+- **[project-state](./skills/engineering/project-state/SKILL.md)**: Keeps `PROJECT-STATE.md`: current focus, next actions, one source of truth per domain, and what to read for each task.
+- **[diagnose](./skills/engineering/diagnose/SKILL.md)**: Writes `docs/bugs/<slug>.md`: a red loop, ranked falsifiable hypotheses, a regression test before the fix, and a cleanup the validator checks against the repo.
+- **[review-diff](./skills/engineering/review-diff/SKILL.md)**: Reviews the diff since a fixed point: validators and project checks first, then Standards and Spec against the current chunk, with a ship or fix verdict.
+- **[ship-gate](./skills/engineering/ship-gate/SKILL.md)**: Gates a release: every check passes, each shipped requirement has a test or route, env var names, one rollback step, and what was left out.
 
 The order once a product repo exists:
 
@@ -104,6 +108,10 @@ The order once a product repo exists:
 6. On a `wire` beat, connect the shell to the contracts and add one test of what the user sees.
 
 `assumption-trial`, `say-no`, and `spec-drift` read the pack. They do not replace steps 3 to 6.
+
+`project-state` opens and closes each session. A new session reads `PROJECT-STATE.md` first. In an existing repo without a pack, `project-state` is the first skill to run.
+
+`review-diff` closes a beat or a branch. `diagnose` takes a bug from symptom to regression test. `ship-gate` decides `ship` or `hold` before a release.
 
 ## Check a pack
 
@@ -122,6 +130,10 @@ python3 skills/engineering/architecture-memory/scripts/validate_architecture.py 
 python3 skills/engineering/lock-contracts/scripts/validate_contracts.py examples/site-log/src/contracts
 python3 skills/engineering/state-shell/scripts/validate_shell.py examples/site-log/src/features/visit
 python3 skills/engineering/one-chunk/scripts/validate_chunk.py examples/chunk/12-chunk.md
+python3 skills/engineering/project-state/scripts/validate_project_state.py examples/project-state/PROJECT-STATE.md
+python3 skills/engineering/diagnose/scripts/validate_diagnosis.py examples/diagnosis/whitespace-note.md --root examples/diagnosis
+python3 skills/engineering/review-diff/scripts/validate_review.py examples/review/2026-10-04-step4-shell.md
+python3 skills/engineering/ship-gate/scripts/validate_release.py examples/release/0.1.0.md --prd examples/field-notes/01-prd.md --slice examples/field-notes/07-mvp-slice.md
 ```
 
 ## Layout

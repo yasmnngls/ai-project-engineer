@@ -1,7 +1,7 @@
 {
   "name": "ai-project-engineer",
-  "version": "1.3.0",
-  "description": "Skills for the start of a product and the beats after it: a foundation pack, architecture memory, Zod contracts, one screen, one chunk, trials, refusals, and spec drift.",
+  "version": "1.4.0",
+  "description": "Skills for the start of a product and the beats after it: a foundation pack, architecture memory, Zod contracts, one screen, one chunk, trials, refusals, spec drift, project state, diagnosis, review, and a ship gate.",
   "author": {
     "name": "Yhas",
     "url": "https://github.com/yasmnngls"
@@ -25,6 +25,10 @@
     "./skills/engineering/state-shell",
     "./skills/engineering/assumption-trial",
     "./skills/engineering/say-no",
-    "./skills/engineering/spec-drift"
+    "./skills/engineering/spec-drift",
+    "./skills/engineering/project-state",
+    "./skills/engineering/diagnose",
+    "./skills/engineering/review-diff",
+    "./skills/engineering/ship-gate"
   ]
 }

@@ -9,8 +9,8 @@
     {
       "name": "ai-project-engineer",
       "source": "./",
-      "description": "Foundation pack, architecture memory, Zod contracts before UI, one screen shell, one build beat, plus assumption trials, refusals, and spec drift.",
-      "version": "1.3.0",
+      "description": "Foundation pack, architecture memory, Zod contracts before UI, one screen shell, one build beat, plus assumption trials, refusals, spec drift, project state, diagnosis, review, and a ship gate.",
+      "version": "1.4.0",
       "author": {
         "name": "Yhas",
         "url": "https://github.com/yasmnngls"
