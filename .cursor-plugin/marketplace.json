@@ -1,0 +1,32 @@
+{
+  "name": "ai-project-engineer",
+  "owner": {
+    "name": "yasmnngls"
+  },
+  "metadata": {
+    "description": "Skills for founding a product and keeping the build coherent.",
+    "version": "1.3.0"
+  },
+  "plugins": [
+    {
+      "name": "ai-project-engineer",
+      "source": ".",
+      "description": "Foundation pack, architecture memory, Zod contracts before UI, one screen shell, one build beat, plus assumption trials, refusals, and spec drift.",
+      "version": "1.3.0",
+      "author": {
+        "name": "Yhas"
+      },
+      "homepage": "https://github.com/yasmnngls/ai-project-engineer",
+      "repository": "https://github.com/yasmnngls/ai-project-engineer",
+      "license": "MIT",
+      "keywords": [
+        "engineering",
+        "skills",
+        "prd",
+        "contracts",
+        "cursor"
+      ],
+      "category": "Productivity"
+    }
+  ]
+}

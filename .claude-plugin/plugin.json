@@ -1,0 +1,30 @@
+{
+  "name": "ai-project-engineer",
+  "version": "1.3.0",
+  "description": "Skills for the start of a product and the beats after it: a foundation pack, architecture memory, Zod contracts, one screen, one chunk, trials, refusals, and spec drift.",
+  "author": {
+    "name": "Yhas",
+    "url": "https://github.com/yasmnngls"
+  },
+  "homepage": "https://github.com/yasmnngls/ai-project-engineer",
+  "repository": "https://github.com/yasmnngls/ai-project-engineer",
+  "license": "MIT",
+  "keywords": [
+    "engineering",
+    "skills",
+    "prd",
+    "sitemap",
+    "contracts",
+    "architecture"
+  ],
+  "skills": [
+    "./skills/engineering/project-foundation",
+    "./skills/engineering/architecture-memory",
+    "./skills/engineering/one-chunk",
+    "./skills/engineering/lock-contracts",
+    "./skills/engineering/state-shell",
+    "./skills/engineering/assumption-trial",
+    "./skills/engineering/say-no",
+    "./skills/engineering/spec-drift"
+  ]
+}

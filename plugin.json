@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ai-project-engineer",
+  "version": "1.3.0",
+  "description": "Skills for the start of a product and the beats after it: a foundation pack, architecture memory, Zod contracts, one screen, one chunk, trials, refusals, and spec drift.",
+  "author": {
+    "name": "Yhas"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/yasmnngls/ai-project-engineer",
+  "repository": "https://github.com/yasmnngls/ai-project-engineer",
+  "keywords": [
+    "engineering",
+    "skills",
+    "prd",
+    "sitemap",
+    "contracts"
+  ]
+}

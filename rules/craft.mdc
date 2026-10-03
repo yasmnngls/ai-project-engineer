@@ -1,0 +1,17 @@
+---
+description: When editing application TypeScript, read ARCHITECTURE.md, keep Zod contracts ahead of UI, and ship one verifiable chunk.
+globs: "**/*.{ts,tsx}"
+alwaysApply: false
+---
+
+Read `ARCHITECTURE.md` before a structural edit. If you add a module, a contract, or a container, update `## Last change` in the same turn.
+
+- Parse inputs and action results with Zod. Model state as a discriminated union. Do not use a boolean flag to stand in for a missing state.
+- Do not render a new screen until `src/contracts/` exports the schema that screen reads and writes.
+- Presentational components take props. They do not fetch, parse, or import Zod. Loading, ready, and error are branches of one status union.
+- One beat per turn, taken from `docs/foundation/12-chunk.md`: `contract`, `shell`, or `wire`.
+- The wire beat adds one test that asserts what the user sees. Earlier beats do not mock that test into existence.
+- Views use semantic elements, visible labels, a loading skeleton, a keyboard path for the primary action, and one spring transition that turns off when the user prefers reduced motion.
+- Add no component library. Compose with the project's existing primitives and Tailwind.
+
+Follow `architecture-memory`, `lock-contracts`, `state-shell`, and `one-chunk` instead of restating this file into a plan.

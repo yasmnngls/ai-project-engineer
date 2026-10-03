@@ -1,0 +1,10 @@
+---
+description: Read ARCHITECTURE.md before structural changes to this skill marketplace.
+alwaysApply: true
+---
+
+This repository is a Cursor and Claude skill marketplace, not a product app.
+
+Before adding or renaming a skill, a validator, a manifest, or an example, read ARCHITECTURE.md. After a structural change, update ARCHITECTURE.md in the same turn.
+
+Do not add a product UI here. Product UI belongs in the repo that installed these skills, behind lock-contracts, state-shell, and one-chunk.
